@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+# dh tries to run "make distclean" before configure
+# so make.config doesn't exist and distclean fails
+override_dh_auto_clean:
+	echo "skip clean"
+
+override_dh_auto_test:
+	echo "skip tests"
+
+
